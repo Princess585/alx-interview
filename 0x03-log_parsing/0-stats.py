@@ -16,14 +16,14 @@ def process_line(line, total_size, status_counts):
         parts = line.split()
         if len(parts) < 7:
             return total_size, status_counts
-        
+
         file_size = int(parts[-1])
         total_size += file_size
-        
+
         status_code = parts[-2]
         if status_code.isdigit() and int(status_code) in status_counts:
             status_counts[int(status_code)] += 1
-        
+
     except Exception as e:
         pass
 
@@ -45,7 +45,7 @@ def main():
         for line in sys.stdin:
             line_count += 1
             total_size, status_counts = process_line(line, total_size, status_counts)
-            
+
             if line_count % 10 == 0:
                 print_stats(total_size, status_counts)
 
