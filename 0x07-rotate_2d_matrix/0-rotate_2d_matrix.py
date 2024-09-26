@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" doc doc doc """
+"""Matrix"""
 
 
 def rotate_2d_matrix(matrix):
-    """doc doc doc"""
+    """Rotate 2d"""
     n = len(matrix)
 
     for i in range(n):
